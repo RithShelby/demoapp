@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Map'),
           centerTitle: true,
           leading: Icon(Icons.login),
-          actions: [Text("End Data"), Icon(Icons.login)],
+          actions: [Text("End Data")],
           backgroundColor: Colors.teal,
         ),
       ),
