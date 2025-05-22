@@ -1,9 +1,12 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "notebook.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "prettier.bracketSameLine": true,
-  "prettier.enable": true,
-  "prettier.singleQuote": true,
-  "prettier.singleAttributePerLine": true
+ "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "notebook.defaultFormatter": "esbenp.prettier-vscode",
+ "editor.formatOnSave": true,
+ "prettier.bracketSameLine": true,
+ "prettier.enable": true,
+ "prettier.singleQuote": true,
+ "prettier.singleAttributePerLine": true,
+ "editor.formatOnPaste": true,
+ "dart.flutterScreenshotPath": null,
+ "prettier.endOfLine": "auto"
 }
