@@ -1,6 +1,8 @@
+import 'package:demoapp/data/constants.dart';
 import 'package:demoapp/data/notifiers.dart';
 import 'package:demoapp/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  @override
+  void initState() {
+    initThemeMode();
+    super.initState();
+  }
+
+  void initThemeMode() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? repeat = prefs.getBool(KConstants.themeModeKey);
+    isDarkModifier.value = repeat ?? false;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: isDarkModifier,
@@ -28,7 +43,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.teal,
+              seedColor: Colors.tealAccent,
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:demoapp/views/widget_tree.dart';
-import 'package:demoapp/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -19,21 +19,23 @@ class _LoginPageState extends State<LoginPage> {
   void onLoginPressed() {
     if (confirmEmail == controllerEmail.text &&
         confirmPassword == controllerPw.text) {
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return WidgetTree();
           },
         ),
+        (route) => false,
       );
     }
   }
 
   @override
   void initState() {
-    print('initState');
     super.initState();
+    controllerEmail.text = 'john';
+    controllerPw.text = '123';
   }
 
   @override
@@ -53,8 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                HeroWidget(title: widget.title),
-                SizedBox(height: 20.0),
+                Lottie.asset('asset/lotties/auth.json'),
                 TextField(
                   controller: controllerEmail,
                   decoration: InputDecoration(
@@ -77,14 +78,14 @@ class _LoginPageState extends State<LoginPage> {
                   onEditingComplete: () => {setState(() {})},
                 ),
                 SizedBox(height: 20.0),
-                ElevatedButton(
+                FilledButton(
                   onPressed: () {
                     onLoginPressed();
                   },
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
-                  child: Text("Login"),
+                  child: Text(widget.title),
                 ),
                 SizedBox(height: 50.0),
               ],

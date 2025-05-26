@@ -12,15 +12,15 @@ class HeroWidget extends StatelessWidget {
           tag: 'hero1',
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset('asset/image/mount.jpg'),
+            child: Image.asset('asset/image/peaky.jpg'),
           ),
         ),
         Text(
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 50.0,
-            letterSpacing: 10.0,
+            fontSize: 40.0,
+            letterSpacing: 5.0,
             color: Colors.white,
           ),
         ),

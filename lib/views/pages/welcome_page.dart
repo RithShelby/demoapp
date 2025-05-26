@@ -1,4 +1,5 @@
 import 'package:demoapp/views/pages/login_page.dart';
+import 'package:demoapp/views/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,7 +18,7 @@ class WelcomePage extends StatelessWidget {
               Lottie.asset('asset/lotties/welcome.json'),
               FittedBox(
                 child: Text(
-                  'Flutter Map',
+                  'Flutter for Life 🙇‍♂️',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 70.0,
@@ -32,7 +33,7 @@ class WelcomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return LoginPage(title: 'Register');
+                        return OnboardingPage();
                       },
                     ),
                   );
